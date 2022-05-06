@@ -34,5 +34,5 @@ def new_topic(request):
             return redirect('learning_logs:topics')
 
     #display a blank form
-    context = {'forms':form}
+    context = {'form':form}
     return render(request, 'learning_logs/new_topic.html',context)
