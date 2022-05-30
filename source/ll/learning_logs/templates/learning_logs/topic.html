@@ -3,11 +3,19 @@
 {% block content %}
   <p> Topic: {{topic}} </p>
 
+  <p> Entries: </p>
+  <p>
+    <a href = "{% url 'learning_logs:new_entry' topic.id %}"> Add Entry </a>
+  </p>
+
   <ul>
     {% for entry in entries %}
     <li>
       <p> {{ entry.timestamp_added}} </p>
       <p> {{entry.text}} </p>
+      <p>
+        <a href ={% url 'learning_logs:edit_entry' entry.id %}>Edit Entry</a>
+      </p>
     </li>
     {% empty %}
     <li> No Entries found </li>
