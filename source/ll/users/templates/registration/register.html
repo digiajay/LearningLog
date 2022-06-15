@@ -1,0 +1,16 @@
+<!-- Django looks for templates in order to display default login page or registration page -->
+<!-- The default login page or registration page shoudl appear inside the folder structure teamplates/registration/login.html-->
+
+{% extends 'learning_logs/base.html' %} <!--  Templates can inherit from other apps inside same Django project-->
+
+{% block content %}
+
+  <form method="post" action="{% url 'users:register' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button name="submit">Register</button>
+    <input type="hidden" name="next" value = "{% url 'learning_logs:index' %}" />
+  </form>
+
+{% endblock content %}

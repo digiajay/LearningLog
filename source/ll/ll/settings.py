@@ -30,10 +30,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+LOGIN_URL = 'users:login'
+
 INSTALLED_APPS = [
     #My Apps
 
     'learning_logs',
+    'users',
+
+    #Third-party apps
+    'bootstrap4',
 
     # Default Django Apps
     'django.contrib.admin',
